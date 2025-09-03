@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Categorie Prodotti – Albero con Checkbox</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Categorie Prodotti</h1>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Filtra categorie..." aria-label="Filtra categorie" />
+        <button id="expandAll" type="button">Espandi tutto</button>
+        <button id="collapseAll" type="button">Comprimi tutto</button>
+        <button id="clearSelection" type="button">Deseleziona tutto</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="tree" class="tree" aria-live="polite" aria-busy="true">
+        <div class="loading">Caricamento categorie…</div>
+      </section>
+
+      <section class="selection">
+        <div class="selection-header">
+          <h2>Selezionati (<span id="selectedCount">0</span>)</h2>
+          <div class="selection-actions">
+            <button id="copySelection" type="button">Copia</button>
+          </div>
+        </div>
+        <textarea id="selectedList" rows="8" readonly placeholder="Le categorie selezionate appariranno qui…"></textarea>
+        <div id="copyFeedback" role="status" aria-live="polite" class="copy-feedback" hidden>Copiato!</div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Fonte dati: <code>categorie_uniche.json</code></small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
